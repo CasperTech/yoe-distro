@@ -214,7 +214,7 @@ fi # if -e ${OE_ENV_FILE}
 # UPDATE_ALL() - Make sure everything is up to date
 ###############################################################################
 yoe_update_all() {
-  CWD=`pwd`
+  CWD=$(pwd)
   cd ${OE_BASE}
   git pull && git submodule sync && git submodule update
   cd $CWD
@@ -387,7 +387,7 @@ yoe_clean_sstate() {
 }
 
 # Docker integration
-# set DOCKER_REPO to something like cbrake/oe-build
+# set DOCKER_REPO to something like yoedistro/yoe-build:stretch
 # Note, set DOCKER_REPO outside of envsetup.sh, otherwise
 # it will get set in container, which is not what you want.
 # local.sh is a good place to set DOCKER_REPO
@@ -430,14 +430,23 @@ bitbake() {
 # Machine independent install scripts
 ###############################################################################
 
+yoe_check_install_dependencies() {
+  if ! pv -V 1>/dev/null; then
+    echo "ERROR: Please install the pv utility (http://www.ivarch.com/programs/pv.shtml)"
+    return 1
+  fi
+}
+
 # write a WIC image to media (SD, USB, etc)
-yoe_install_wic_image() {
+yoe_install_image() {
   DRIVE=$1
   IMAGE_NAME=$2
 
+  yoe_check_install_dependencies || return 1
+
   if [ ! $DRIVE ] || [ ! $IMAGE_NAME ]; then
-    echo "Usage: yoe_install_wic_image /dev/sdX image_name"
-    echo "Warning, make sure you specify your SD card and not a workstation disk"
+    echo "Usage: yoe_install_image /dev/sdX image_name"
+    echo "WARNING!!!, make sure you specify your SD card and not a workstation disk"
     echo
     return 1
   fi
