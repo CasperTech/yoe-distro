@@ -17,6 +17,8 @@ scratch on a Raspberry PI 3:
 1. `sudo eject /dev/sdX`
 1. Install SD card in a Raspberry PI and enjoy your new image
 
+To enable touch support, edit /etc/WPEFramework/plugins/WebKitBrowser.json and set touch to true
+
 [Detailed documentation](docs/README.md)
 
 ## Vision
