@@ -67,9 +67,9 @@
 	url = git://github.com/YoeDistro/meta-rust
 	branch = master
 [submodule "meta-wpe"]
-	path = meta-wpe
+	path = sources/meta-wpe
 	url = https://github.com/WebPlatformForEmbedded/meta-wpe.git
 [submodule "meta-nodejs"]
-	path = meta-nodejs
+	path = sources/meta-nodejs
 	url = https://github.com/aaronovz1/meta-nodejs.git
 	branch = pyro
