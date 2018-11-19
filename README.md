@@ -8,7 +8,7 @@ This following is example of building and installing a linux system from
 scratch on a Raspberry PI 3:
 
 1. `git submodule update --init`
-1. `. raspberrypi3-64-envsetup.sh`
+1. `. raspberrypi3-envsetup.sh`
 1. `yoe_setup`
 1. `bitbake wpe-eglfs-image`
 1. insert SD card
