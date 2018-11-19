@@ -73,3 +73,6 @@
 	path = sources/meta-nodejs
 	url = https://github.com/aaronovz1/meta-nodejs.git
 	branch = pyro
+[submodule "meta-caspertech-extras"]
+	path = sources/meta-caspertech-extras
+	url = https://github.com/CasperTech/meta-caspertech-extras.git
