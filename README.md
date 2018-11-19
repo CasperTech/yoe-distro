@@ -1,21 +1,16 @@
-<img src="docs/yoe.png?raw=true" width="150">
-
 # Yoe Embedded Linux Distribution
 
-Yoe is an Embedded Linux Distribution optimized for product development.
-It is built on **Y**octo and **O**pen**E**mbedded with a focus on simplicity.
-This distribution does not end at demo images but rather begins there.
+Fork of the Yoe Embedded Linux Distribution with meta-wpe and meta-nodejs included as submodules.
 
 ## Example
 
 This following is example of building and installing a linux system from
 scratch on a Raspberry PI 3:
 
-1. `git clone git://github.com/YoeDistro/yoe-distro.git`
-1. `cd yoe-distro`
+1. `git submodule update --init`
 1. `. raspberrypi3-64-envsetup.sh`
 1. `yoe_setup`
-1. `bitbake core-image-base`
+1. `bitbake wpe-eglfs-image`
 1. insert SD card
 1. `lsblk` (note sd card device, and substitute for /dev/sdX below)
 1. `yoe_install_image /dev/sdX core-image-base`
