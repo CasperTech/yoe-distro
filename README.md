@@ -12,7 +12,7 @@ scratch on a Raspberry PI 3:
 1. `bitbake wpe-eglfs-image`
 1. insert SD card
 1. `lsblk` (note sd card device, and substitute for /dev/sdX below)
-1. `yoe_install_image /dev/sdX core-image-base`
+1. `yoe_install_image /dev/sdX wpe-eglfs-image`
 1. optional: [configure console for serial port](docs/raspberrypi.md)
 1. `sudo eject /dev/sdX`
 1. Install SD card in a Raspberry PI and enjoy your new image
